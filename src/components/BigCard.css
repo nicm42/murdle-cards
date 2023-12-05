@@ -59,7 +59,7 @@
 }
 
 .big-cards {
-  display: none;
+  /* display: none; */
   background: white;
   height: 90%;
   left: 0;
@@ -71,7 +71,7 @@
 
 .big-card {
   cursor: auto;
-  display: none;
+  /* display: none; */
   flex-direction: column;
   left: 50%;
   height: fit-content;

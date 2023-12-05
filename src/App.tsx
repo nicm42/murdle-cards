@@ -1,16 +1,21 @@
+import { useState } from 'react';
 import SmallCard from './components/SmallCard';
 import BigCard from './components/BigCard';
 import './App.css';
 
 function App() {
+  const [showBigCard, setShowBigCard] = useState<boolean>(false);
+
   return (
     <>
       <div className="small-cards">
-        <SmallCard />
+        <SmallCard setShowBigCard={setShowBigCard} />
       </div>
-      <div className="big-cards">
-        <BigCard />
-      </div>
+      {showBigCard && (
+        <div className="big-cards">
+          <BigCard />
+        </div>
+      )}
     </>
   );
 }

@@ -1,6 +1,6 @@
 import './BigCard.css';
 
-function Card() {
+function BigCard() {
   return (
     <div className="big-card card" data-name="brownstone">
       <div className="card--emoji">👨‍🦲</div>
@@ -27,4 +27,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default BigCard;
