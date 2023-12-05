@@ -13,7 +13,7 @@ function App() {
       </div>
       {showBigCard && (
         <div className="big-cards">
-          <BigCard />
+          <BigCard setShowBigCard={setShowBigCard} />
         </div>
       )}
     </>

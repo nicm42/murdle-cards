@@ -1,6 +1,10 @@
 import './BigCard.css';
 
-function BigCard() {
+type Props = {
+  setShowBigCard: (showing: boolean) => void;
+};
+
+function BigCard({ setShowBigCard }: Props) {
   return (
     <div className="big-card card" data-name="brownstone">
       <div className="card--emoji">👨‍🦲</div>
@@ -13,7 +17,10 @@ function BigCard() {
         5'4" • Left-handed • Brown eyes • Brown hair • Capricorn
       </p>
       <div className="card--buttons">
-        <button className="card--button card--button-setdown">
+        <button
+          className="card--button card--button-setdown"
+          onClick={() => setShowBigCard(false)}
+        >
           Set card down
         </button>
         <button
