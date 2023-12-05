@@ -1,7 +1,14 @@
 .small-cards {
   align-items: center;
   display: flex;
+  gap: 0.625em;
   height: 100%;
   justify-content: center;
-  gap: 10px;
+}
+
+.small-card {
+  cursor: pointer;
+  height: 200px;
+  padding: 0.25em;
+  width: 150px;
 }
