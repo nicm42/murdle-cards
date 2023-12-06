@@ -1,5 +1,33 @@
 [
   {
+    "name": "Admiral Navy",
+    "colour": "",
+    "emoji": "",
+    "description": "The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.",
+    "details": "5'9\" • RIGHT-HANDED • BLUE EYES • BROWN HAIR • CANCER"
+  },
+  {
+    "name": "Babyface Blue",
+    "colour": "#016fb9",
+    "emoji": "👶",
+    "description": "This is absolutely one fully grown man, and not 2 kids in a trench-coat. They can do adult things like see R rated movies, buy beer, and stay out way past bedtime. (Submitted by Kaela.)",
+    "details": "7'8\" • RIGHT-HANDED • BLUE EYES • BLOND HAIR • GEMINI"
+  },
+  {
+    "name": "Baron Maroon",
+    "colour": "",
+    "emoji": "",
+    "description": "An incredibly haughty man who holds a grudge. Nobody wants to offend the baron. At least, nobody who's still alive...",
+    "details": "6'2\" • RIGHT-HANDED • HAZEL EYES • RED HAIR • SCORPIO"
+  },
+  {
+    "name": "Bishop Azure",
+    "colour": "#007fff",
+    "emoji": "♝",
+    "description": "A bishop in the Church, Azure has been known to pray for both her friends and her enemies. Of course, she asks for different things...",
+    "details": "5'4\" • RIGHT-HANDED • BROWN EYES • BROWN HAIR • GEMINI"
+  },
+  {
     "name": "Brother Brownstone",
     "colour": "#834333",
     "emoji": "🦲",
@@ -7,18 +35,32 @@
     "details": "5'4\" • Left-handed • Brown eyes • Brown hair • Capricorn"
   },
   {
-    "name": "Mx Tangerine",
-    "data-name": "#f28500",
-    "emoji": "👨‍",
-    "description": "Proving that non-binary people can be murderers, too, Mx. Tangerine is an artist, poet, and potential suspect.",
-    "details": "5'5\" • Left-handed • Hazel eyes • Blond hair • Pisces"
+    "name": "Captain Slate",
+    "colour": "",
+    "emoji": "",
+    "description": "A real-life astronaut. The first woman to travel around the dark side of the moon and also the first to be suspected of murdering her co-pilot.",
+    "details": "5'5\" • LEFT-HANDED • BROWN EYES • BROWN HAIR • AQUARIUS"
   },
   {
-    "name": "Miss Saffron",
-    "data-name": "#f4c430",
-    "emoji": "👱‍♀️",
-    "description": "Gorgeous and stunning, but maybe not all there in the brains department. Or maybe that's what she wants you to think. Or maybe she wants you to think that's what she wants you to think. Her pet poodle accompanies her everywhere she goes.",
-    "details": "5'2\" • Left-handed • Hazel eyes • Blond hair • Libra"
+    "name": "Chancellor Tuscany",
+    "colour": "",
+    "emoji": "",
+    "description": "Chancellor Tuscany is the head of Deduction College, revered for her intelligence, social charm, and the fear she strikes in the hearts of her enemies.",
+    "details": "5'5\" • LEFT-HANDED • GREEN EYES • GREY HAIR • LIBRA"
+  },
+  {
+    "name": "Chef Aubergine",
+    "colour": "",
+    "emoji": "",
+    "description": "It is said that she once killed her husband, cooked him, and then served him at her restaurant. It's not true, but even the fact that it's said about her tells you something. Faintly smells of onions (and, surprisingly, in a good way).",
+    "details": "5'2\" • RIGHT-HANDED • BLUE EYES • BLOND HAIR • LIBRA"
+  },
+  {
+    "name": "Coach Raspberry",
+    "colour": "",
+    "emoji": "",
+    "description": "One of the best coaches this side of the Mississippi, regardless of which side you happen to be on. Some people say he has a gambling problem, but he just says he loves danger.",
+    "details": "6'0\" • LEFT-HANDED • BLUE EYES • BLOND HAIR • ARIES"
   },
   {
     "name": "Comrade Champagne",
@@ -28,10 +70,192 @@
     "details": "5'11\" • LEFT-HANDED • HAZEL EYES • BLOND HAIR • CAPRICORN"
   },
   {
+    "name": "Dame Obsidian",
+    "colour": "",
+    "emoji": "",
+    "description": "A mystery writer whose books (such as the best-selling A Very Proper Murder) have sold more copies than the Bible and Shakespeare combined.",
+    "details": "5'4\" • LEFT-HANDED • GREEN EYES • BLACK HAIR • LEO"
+  },
+  {
+    "name": "Deacon Verdigris",
+    "colour": "",
+    "emoji": "",
+    "description": "A deacon in the Church. She handles the parishoner's donations and, sometimes, their secrets.",
+    "details": "5'3\" • LEFT-HANDED • BLUE EYES • GREY HAIR • LEO"
+  },
+  {
+    "name": "Dean Glaucous",
+    "colour": "",
+    "emoji": "",
+    "description": "The dean of some such-and-such department at a massively funded research university. What does he do? Well, he handles the money, for one...",
+    "details": "5'6\" • RIGHT-HANDED • BROWN EYES • BROWN HAIR • VIRGO"
+  },
+  {
+    "name": "Dr Crimson",
+    "colour": "",
+    "emoji": "",
+    "description": "She's the smartest doctor she's ever met, according to her, and she's probably right. She smokes cigarettes but if she gets lung cancer, she'll find a cure.",
+    "details": "5'9\" • LEFT-HANDED • GREEN EYES • RED HAIR • AQUARIUS"
+  },
+  {
+    "name": "Earl Grey",
+    "colour": "",
+    "emoji": "",
+    "description": "He comes from a long line of Earl Greys. Yes, those Earl Greys. No, he doesn't sign autographs. But he always does have some bags with him.",
+    "details": "5'9\" • RIGHT-HANDED • BROWN EYES • WHITE HAIR • CAPRICORN"
+  },
+  {
+    "name": "Father Mango",
+    "colour": "",
+    "emoji": "",
+    "description": "Father Mango has taken a vow of poverty, but he drives a BMW. He's taken a vow of obedience, but he has a staff of 25. He's taken a vow of chastity, too, which is why he's on vacation.",
+    "details": "5'10\" • LEFT-HANDED • BROWN EYES • NO HAIR • TAURUS"
+  },
+  {
+    "name": "General Coffee",
+    "colour": "#322214",
+    "emoji": "👴",
+    "description": "An espresso connoisseur, he always drinks his morning brew before sending his men across the battlefield to die. Was it for honor? Was it for glory? Was it for riches? Or was it for the love of the bean?",
+    "details": "6'0\" • RIGHT-HANDED • BROWN EYES • NO HAIR • SAGITTARIUS"
+  },
+  {
+    "name": "Grandmaster Rose",
+    "colour": "",
+    "emoji": "",
+    "description": "A chess grandmaster who is always plotting his next move. Like how to bump off his next opponent!",
+    "details": "5'7\" • LEFT-HANDED • BROWN EYES • BROWN HAIR • SCORPIO"
+  },
+  {
+    "name": "Judge Pine",
+    "colour": "",
+    "emoji": "",
+    "description": "Master of the courtroom and possessed of a firm belief in justice, as decided by her and her alone.",
+    "details": "5'6\" • RIGHT-HANDED • BROWN EYES • BLACK HAIR • TAURUS"
+  },
+  {
+    "name": "Lady Violet",
+    "colour": "",
+    "emoji": "",
+    "description": "An heiress to empire, the daughter of a duke, as stuck-up and sophisticated as a person can be.",
+    "details": "5'0\" • RIGHT-HANDED • BLUE EYES • BLOND HAIR • VIRGO"
+  },
+  {
+    "name": "Lord Lavender",
+    "colour": "",
+    "emoji": "",
+    "description": "A politically conservative MP in the House of Lords, as well as the musical theater composer behind such hits as Dogs and Mr. Moses Megastar. He will tell you he isn't racist.",
+    "details": "5'9\" • RIGHT-HANDED • GREEN EYES • GREY HAIR • VIRGO"
+  },
+  {
+    "name": "Mayor Honey",
+    "colour": "",
+    "emoji": "",
+    "description": "He knows where the bodies are buried, and he makes sure they always vote for him.",
+    "details": "6'0\" • LEFT-HANDED • HAZEL EYES • BROWN HAIR • SCORPIO"
+  },
+  {
+    "name": "Miss Saffron",
+    "data-name": "#f4c430",
+    "emoji": "👱‍♀️",
+    "description": "Gorgeous and stunning, but maybe not all there in the brains department. Or maybe that's what she wants you to think. Or maybe she wants you to think that's what she wants you to think. Her pet poodle accompanies her everywhere she goes.",
+    "details": "5'2\" • Left-handed • Hazel eyes • Blond hair • Libra"
+  },
+  {
+    "name": "Mx Tangerine",
+    "data-name": "#f28500",
+    "emoji": "👨‍",
+    "description": "Proving that non-binary people can be murderers, too, Mx. Tangerine is an artist, poet, and potential suspect.",
+    "details": "5'5\" • Left-handed • Hazel eyes • Blond hair • Pisces"
+  },
+  {
+    "name": "Officer Copper",
+    "colour": "",
+    "emoji": "",
+    "description": "The best part of being a policewoman criminal is that you can fail to investigate your own crimes and cut out the middleman.",
+    "details": "5'5\" • RIGHT-HANDED • BLUE EYES • BLOND HAIR • ARIES"
+  },
+  {
+    "name": "Principal Applegreen",
+    "colour": "",
+    "emoji": "",
+    "description": "A strict principal about everything except getting away with murder. His hands are always covered in chalk.",
+    "details": "5'11\" • RIGHT-HANDED • BLUE EYES • NO HAIR • LIBRA"
+  },
+  {
+    "name": "Président Amaranth",
+    "colour": "",
+    "emoji": "",
+    "description": "The literal French President, Amaranth loves spending time with his constituents, especially a certain 1% of them.",
+    "details": "5'10\" • RIGHT-HANDED • GREY EYES • RED HAIR • GEMINI"
+  },
+  {
+    "name": "Secretary Celadon",
+    "colour": "",
+    "emoji": "",
+    "description": "The Secretary of Defense, and someone who is personally responsible for a number of war crimes, some of which are now named after her.",
+    "details": "5'6\" • LEFT-HANDED • GREEN EYES • BROWN HAIR • LEO"
+  },
+  {
+    "name": "Signor Emerald",
+    "colour": "",
+    "emoji": "",
+    "description": "An Italian jeweler of great renown, Signor Emerald has traveled the world in search of rare precious stones, which are always falling out of his pockets.",
+    "details": "5'8\" • LEFT-HANDED • BROWN EYES • BLACK HAIR • SAGITTARIUS"
+  },
+  {
     "name": "Silverton The Legend",
     "colour": "",
     "emoji": "👑",
     "description": "An acclaimed actor of the Golden Age, now in his golden years.",
     "details": "6'4\" • RIGHT-HANDED • BLUE EYES • SILVER HAIR • LEO"
+  },
+  {
+    "name": "Sir Rulean",
+    "colour": "",
+    "emoji": "",
+    "description": "A sophisticated gentleman who just happens to have been knighted, if you believe the Official Knighting Documents he is always waving around.",
+    "details": "5'8\" • RIGHT-HANDED • BLUE EYES • RED HAIR • LEO"
+  },
+  {
+    "name": "Sister Lapis",
+    "colour": "#125e8a",
+    "emoji": "👵",
+    "description": "A habit-wearing nun in a Holy Order of Great Renown. She travels the world, doing God's work, but on His dime, too.",
+    "details": "5'2\" • RIGHT-HANDED • BROWN EYES • BROWN HAIR • CANCER"
+  },
+  {
+    "name": "The Amazing Aureolin",
+    "colour": "",
+    "emoji": "",
+    "description": "The Amazing Aureolin is a touring magician who has perfected the whole sawing-the-husband-in-two routine. Then, she made the body disappear. For her next trick, she's going to need a volunteer.",
+    "details": "5'6\" • LEFT-HANDED • GREEN EYES • BLOND HAIR • ARIES"
+  },
+  {
+    "name": "The Duchess of Vermillion",
+    "colour": "#e34234",
+    "emoji": "👩‍🦳",
+    "description": "The Duchess is an tall old woman with tall old secrets. If she is the murderer, then it certainly wouldn't be the first time.",
+    "details": "5'9\" • LEFT-HANDED • GREY EYES • WHITE HAIR • PISCES"
+  },
+  {
+    "name": "Uncle Midnight",
+    "colour": "",
+    "emoji": "",
+    "description": "When his dad died, he bought a desert mansion with a pool and retired. He was 17.",
+    "details": "5'8\" • LEFT-HANDED • BLUE EYES • BROWN HAIR • SAGITTARIUS"
+  },
+  {
+    "name": "Vice President Mauve",
+    "colour": "",
+    "emoji": "",
+    "description": "Vice President of TekCo Futures. If she asks you to step into her metaverse, scream.",
+    "details": "5'8\" • RIGHT-HANDED • BROWN EYES • BLACK HAIR • TAURUS"
+  },
+  {
+    "name": "Viscount Eminence",
+    "colour": "",
+    "emoji": "",
+    "description": "The oldest man you have ever seen. It is said that he outlived all of his sons and he was born before his father.",
+    "details": "5'2\" • LEFT-HANDED • GREY EYES • BROWN HAIR • PISCES"
   }
 ]
