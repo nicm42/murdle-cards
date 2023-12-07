@@ -23,15 +23,3 @@
   text-align: center;
   text-transform: uppercase;
 }
-
-.card[data-name='brownstone'] {
-  --card-colour: #834333;
-}
-
-.card[data-name='tangerine'] {
-  --card-colour: #f28500;
-}
-
-.card[data-name='saffron'] {
-  --card-colour: #f4c430;
-}

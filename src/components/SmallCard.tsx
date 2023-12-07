@@ -1,20 +1,22 @@
+import { ISuspect } from '../App';
 import './SmallCard.css';
 
 type Props = {
+  suspect: ISuspect;
   setShowBigCard: (showing: boolean) => void;
 };
 
-function SmallCard({ setShowBigCard }: Props) {
+function SmallCard({ suspect, setShowBigCard }: Props) {
   return (
     <div
       className="card small-card"
-      data-name="brownstone"
       role="button"
       tabIndex={0}
+      style={{ '--card-colour': suspect.colour } as React.CSSProperties}
       onClick={() => setShowBigCard(true)}
     >
-      <div className="card--emoji">👨‍🦲</div>
-      <h2 className="card--name">Brother Brownstone</h2>
+      <div className="card--emoji">{suspect.emoji}</div>
+      <h2 className="card--name">{suspect.name}</h2>
     </div>
   );
 }

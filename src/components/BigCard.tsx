@@ -1,21 +1,21 @@
+import { ISuspect } from '../App';
 import './BigCard.css';
 
 type Props = {
+  suspect: ISuspect;
   setShowBigCard: (showing: boolean) => void;
 };
 
-function BigCard({ setShowBigCard }: Props) {
+function BigCard({ suspect, setShowBigCard }: Props) {
   return (
-    <div className="big-card card" data-name="brownstone">
-      <div className="card--emoji">👨‍🦲</div>
-      <h2 className="card--name">Brother Brownstone</h2>
-      <p className="card--description">
-        A monk who has dedicated his life to the church, specifically to making
-        money for it.
-      </p>
-      <p className="card--details">
-        5'4" • Left-handed • Brown eyes • Brown hair • Capricorn
-      </p>
+    <div
+      className="big-card card"
+      style={{ '--card-colour': suspect.colour } as React.CSSProperties}
+    >
+      <div className="card--emoji">{suspect.emoji}</div>
+      <h2 className="card--name">{suspect.name}</h2>
+      <p className="card--description">{suspect.description}</p>
+      <p className="card--details">{suspect.details}</p>
       <div className="card--buttons">
         <button
           className="card--button card--button-setdown"
