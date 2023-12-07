@@ -1,8 +1,8 @@
 [
   {
     "name": "Admiral Navy",
-    "colour": "",
-    "emoji": "",
+    "colour": "#000080",
+    "emoji": "👨‍✈️",
     "description": "The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.",
     "details": "5'9\" • RIGHT-HANDED • BLUE EYES • BROWN HAIR • CANCER"
   },
@@ -36,8 +36,8 @@
   },
   {
     "name": "Captain Slate",
-    "colour": "",
-    "emoji": "",
+    "colour": "#708090",
+    "emoji": "👩‍🚀",
     "description": "A real-life astronaut. The first woman to travel around the dark side of the moon and also the first to be suspected of murdering her co-pilot.",
     "details": "5'5\" • LEFT-HANDED • BROWN EYES • BROWN HAIR • AQUARIUS"
   },
@@ -92,8 +92,8 @@
   },
   {
     "name": "Dr Crimson",
-    "colour": "",
-    "emoji": "",
+    "colour": "#ba181b",
+    "emoji": "👩‍⚕️",
     "description": "She's the smartest doctor she's ever met, according to her, and she's probably right. She smokes cigarettes but if she gets lung cancer, she'll find a cure.",
     "details": "5'9\" • LEFT-HANDED • GREEN EYES • RED HAIR • AQUARIUS"
   },
