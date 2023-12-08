@@ -15,8 +15,8 @@
   },
   {
     "name": "Baron Maroon",
-    "colour": "",
-    "emoji": "",
+    "colour": "#af3b6e",
+    "emoji": "🤴",
     "description": "An incredibly haughty man who holds a grudge. Nobody wants to offend the baron. At least, nobody who's still alive...",
     "details": "6'2\" • RIGHT-HANDED • HAZEL EYES • RED HAIR • SCORPIO"
   },
@@ -43,8 +43,8 @@
   },
   {
     "name": "Chancellor Tuscany",
-    "colour": "",
-    "emoji": "",
+    "colour": "#cda2ab",
+    "emoji": "👩‍🎓",
     "description": "Chancellor Tuscany is the head of Deduction College, revered for her intelligence, social charm, and the fear she strikes in the hearts of her enemies.",
     "details": "5'5\" • LEFT-HANDED • GREEN EYES • GREY HAIR • LIBRA"
   },
@@ -78,8 +78,8 @@
   },
   {
     "name": "Deacon Verdigris",
-    "colour": "",
-    "emoji": "",
+    "colour": "#48a9a6",
+    "emoji": "👩‍💼",
     "description": "A deacon in the Church. She handles the parishoner's donations and, sometimes, their secrets.",
     "details": "5'3\" • LEFT-HANDED • BLUE EYES • GREY HAIR • LEO"
   },
@@ -99,8 +99,8 @@
   },
   {
     "name": "Earl Grey",
-    "colour": "",
-    "emoji": "",
+    "colour": "#8f8f8f",
+    "emoji": "👨‍🦳",
     "description": "He comes from a long line of Earl Greys. Yes, those Earl Greys. No, he doesn't sign autographs. But he always does have some bags with him.",
     "details": "5'9\" • RIGHT-HANDED • BROWN EYES • WHITE HAIR • CAPRICORN"
   },
@@ -190,8 +190,8 @@
   },
   {
     "name": "Secretary Celadon",
-    "colour": "",
-    "emoji": "",
+    "colour": "#ace1af",
+    "emoji": "👩‍🦱",
     "description": "The Secretary of Defense, and someone who is personally responsible for a number of war crimes, some of which are now named after her.",
     "details": "5'6\" • LEFT-HANDED • GREEN EYES • BROWN HAIR • LEO"
   },
