@@ -43,26 +43,26 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
       <p className="card--details">{suspect.details}</p>
       <div className="card--buttons">
         <button
-          className="card--button card--button-arrow"
+          className="card--button card--button-arrow card--button-arrow-prev"
           aria-label="Previous card"
           onClick={showPreviousCard}
         >
-          ⮕
+          <span>⮕</span>
         </button>
         <button
-          className="card--button card--button-setdown"
-          onClick={setCardDown}
-        >
-          Set card down
-        </button>
-        <button
-          className="card--button card--button-arrow"
+          className="card--button card--button-arrow card--button-arrow-next"
           aria-label="Next card"
           onClick={showNextCard}
         >
-          ⮕
+          <span>⮕</span>
         </button>
       </div>
+      <button
+        className="card--button card--button-setdown"
+        onClick={setCardDown}
+      >
+        Set card down
+      </button>
     </div>
   );
 }
