@@ -13,18 +13,44 @@ export interface ISuspect {
 }
 
 function App() {
-  const [showBigCard, setShowBigCard] = useState<boolean>(false);
+  const [showBigCard, setShowBigCard] = useState<boolean[]>([
+    false,
+    false,
+    false,
+  ]);
 
-  const suspect = suspects[0];
+  //const suspect = suspects[0];
+  const suspects3 = suspects.slice(0, 3);
+
+  const anyBigCardsShowing: boolean = showBigCard.some((element) => element);
 
   return (
     <>
       <div className="small-cards">
-        <SmallCard suspect={suspect} setShowBigCard={setShowBigCard} />
+        {suspects3.map((suspect, index) => (
+          <SmallCard
+            key={suspect.name}
+            suspect={suspect}
+            showBigCard={showBigCard}
+            setShowBigCard={setShowBigCard}
+            index={index}
+          />
+        ))}
       </div>
-      {showBigCard && (
+      {anyBigCardsShowing && (
         <div className="big-cards">
-          <BigCard suspect={suspect} setShowBigCard={setShowBigCard} />
+          {suspects3.map(
+            (suspect, index) =>
+              showBigCard[index] && (
+                <BigCard
+                  key={suspect.name}
+                  suspect={suspect}
+                  showBigCard={showBigCard}
+                  setShowBigCard={setShowBigCard}
+                  index={index}
+                />
+              )
+          )}
         </div>
       )}
     </>

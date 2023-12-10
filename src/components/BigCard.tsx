@@ -3,10 +3,18 @@ import './BigCard.css';
 
 type Props = {
   suspect: ISuspect;
-  setShowBigCard: (showing: boolean) => void;
+  showBigCard: boolean[];
+  setShowBigCard: (showing: boolean[]) => void;
+  index: number;
 };
 
-function BigCard({ suspect, setShowBigCard }: Props) {
+function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
+  const setCardDown = () => {
+    const updatedCards = [...showBigCard];
+    updatedCards[index] = false;
+    setShowBigCard(updatedCards);
+  };
+
   return (
     <div
       className="big-card card"
@@ -19,7 +27,7 @@ function BigCard({ suspect, setShowBigCard }: Props) {
       <div className="card--buttons">
         <button
           className="card--button card--button-setdown"
-          onClick={() => setShowBigCard(false)}
+          onClick={setCardDown}
         >
           Set card down
         </button>
