@@ -15,6 +15,14 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
     setShowBigCard(updatedCards);
   };
 
+  const showNextCard = () => {
+    const updatedCards = [...showBigCard];
+    const cardToShow = index < showBigCard.length - 1 ? index + 1 : 0;
+    updatedCards[index] = false;
+    updatedCards[cardToShow] = true;
+    setShowBigCard(updatedCards);
+  };
+
   return (
     <div
       className="big-card card"
@@ -34,6 +42,7 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
         <button
           className="card--button card--button-arrow"
           aria-label="Next card"
+          onClick={showNextCard}
         >
           ⮕
         </button>
