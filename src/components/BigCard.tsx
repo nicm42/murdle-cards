@@ -9,26 +9,27 @@ type Props = {
 };
 
 function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
-  const setCardDown = () => {
+  const updateCardShowing = (cardToHide: number, cardToShow?: number) => {
     const updatedCards = [...showBigCard];
-    updatedCards[index] = false;
+    updatedCards[cardToHide] = false;
+    if (cardToShow !== undefined) {
+      updatedCards[cardToShow] = true;
+    }
     setShowBigCard(updatedCards);
+  };
+
+  const setCardDown = () => {
+    updateCardShowing(index);
   };
 
   const showNextCard = () => {
-    const updatedCards = [...showBigCard];
     const cardToShow = index < showBigCard.length - 1 ? index + 1 : 0;
-    updatedCards[index] = false;
-    updatedCards[cardToShow] = true;
-    setShowBigCard(updatedCards);
+    updateCardShowing(index, cardToShow);
   };
 
   const showPreviousCard = () => {
-    const updatedCards = [...showBigCard];
     const cardToShow = index > 0 ? index - 1 : showBigCard.length - 1;
-    updatedCards[index] = false;
-    updatedCards[cardToShow] = true;
-    setShowBigCard(updatedCards);
+    updateCardShowing(index, cardToShow);
   };
 
   return (
