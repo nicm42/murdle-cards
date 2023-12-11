@@ -9,6 +9,8 @@ type Props = {
 };
 
 function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
+  const buttonFocus = (element: HTMLButtonElement | null) => element?.focus();
+
   const updateCardShowing = (cardToHide: number, cardToShow?: number) => {
     const updatedCards = [...showBigCard];
     updatedCards[cardToHide] = false;
@@ -41,6 +43,13 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
       <h2 className="card--name">{suspect.name}</h2>
       <p className="card--description">{suspect.description}</p>
       <p className="card--details">{suspect.details}</p>
+      <button
+        className="card--button card--button-setdown"
+        ref={buttonFocus}
+        onClick={setCardDown}
+      >
+        Set card down
+      </button>
       <div className="card--buttons">
         <button
           className="card--button card--button-arrow card--button-arrow-prev"
@@ -57,12 +66,6 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
           <span>⮕</span>
         </button>
       </div>
-      <button
-        className="card--button card--button-setdown"
-        onClick={setCardDown}
-      >
-        Set card down
-      </button>
     </div>
   );
 }

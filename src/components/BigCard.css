@@ -72,7 +72,7 @@
   text-transform: uppercase;
 }
 
-.card--button:focus-visible {
+.card--button:focus {
   outline: 3px solid #1dacd6;
 }
 
