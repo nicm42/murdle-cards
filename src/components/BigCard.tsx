@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { ISuspect } from '../App';
 import './BigCard.css';
 
@@ -5,11 +6,32 @@ type Props = {
   suspect: ISuspect;
   showBigCard: boolean[];
   setShowBigCard: (showing: boolean[]) => void;
+  lastClicked: string;
+  setLastClicked: (clicked: string) => void;
   index: number;
 };
 
-function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
-  const buttonFocus = (element: HTMLButtonElement | null) => element?.focus();
+function BigCard({
+  suspect,
+  showBigCard,
+  setShowBigCard,
+  lastClicked,
+  setLastClicked,
+  index,
+}: Props) {
+  const previousButtonRef = useRef<HTMLButtonElement>(null);
+  const nextButtonRef = useRef<HTMLButtonElement>(null);
+  const setDownRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (lastClicked === 'next') {
+      nextButtonRef.current?.focus();
+    } else if (lastClicked === 'previous') {
+      previousButtonRef.current?.focus();
+    } else {
+      setDownRef.current?.focus();
+    }
+  }, []);
 
   const updateCardShowing = (cardToHide: number, cardToShow?: number) => {
     const updatedCards = [...showBigCard];
@@ -22,16 +44,19 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
 
   const setCardDown = () => {
     updateCardShowing(index);
+    setLastClicked('');
   };
 
   const showNextCard = () => {
     const cardToShow = index < showBigCard.length - 1 ? index + 1 : 0;
     updateCardShowing(index, cardToShow);
+    setLastClicked('next');
   };
 
   const showPreviousCard = () => {
     const cardToShow = index > 0 ? index - 1 : showBigCard.length - 1;
     updateCardShowing(index, cardToShow);
+    setLastClicked('previous');
   };
 
   return (
@@ -45,7 +70,7 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
       <p className="card--details">{suspect.details}</p>
       <button
         className="card--button card--button-setdown"
-        ref={buttonFocus}
+        ref={setDownRef}
         onClick={setCardDown}
       >
         Set card down
@@ -54,6 +79,7 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
         <button
           className="card--button card--button-arrow card--button-arrow-prev"
           aria-label="Previous card"
+          ref={previousButtonRef}
           onClick={showPreviousCard}
         >
           <span>⮕</span>
@@ -61,6 +87,7 @@ function BigCard({ suspect, showBigCard, setShowBigCard, index }: Props) {
         <button
           className="card--button card--button-arrow card--button-arrow-next"
           aria-label="Next card"
+          ref={nextButtonRef}
           onClick={showNextCard}
         >
           <span>⮕</span>

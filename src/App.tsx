@@ -18,6 +18,7 @@ function App() {
     false,
     false,
   ]);
+  const [lastClicked, setLastClicked] = useState<string>('');
 
   //const suspect = suspects[0];
   const suspects3 = suspects.slice(0, 3);
@@ -47,6 +48,8 @@ function App() {
                   suspect={suspect}
                   showBigCard={showBigCard}
                   setShowBigCard={setShowBigCard}
+                  lastClicked={lastClicked}
+                  setLastClicked={setLastClicked}
                   index={index}
                 />
               )
