@@ -31,7 +31,7 @@ function BigCard({
     } else {
       setDownRef.current?.focus();
     }
-  }, []);
+  }, [lastClicked]);
 
   const updateCardShowing = (cardToHide: number, cardToShow?: number) => {
     const updatedCards = [...showBigCard];
