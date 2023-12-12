@@ -23,6 +23,7 @@ function BigCard({
   setCardIndexClosed,
   index,
 }: Props) {
+  const bigCardRef = useRef<HTMLDivElement>(null);
   const previousButtonRef = useRef<HTMLButtonElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);
   const setDownRef = useRef<HTMLButtonElement>(null);
@@ -37,6 +38,31 @@ function BigCard({
     const cardToShow = index > 0 ? index - 1 : showBigCard.length - 1;
     updateCardShowing(showBigCard, setShowBigCard, index, cardToShow);
     setLastClicked('previous');
+  };
+
+  const trapFocus = (event: KeyboardEvent) => {
+    // Find all the buttons
+    const focusableElements =
+      bigCardRef.current?.querySelectorAll<HTMLElement>('button');
+    if (focusableElements) {
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      // if the lastElement has focus and shift key wasn't pressed
+      // then focus the firstElement
+      if (document.activeElement === lastElement && !event.shiftKey) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+
+      // if the firstElement has focus and shift key was pressed
+      // then focus the lastElement
+      if (document.activeElement === firstElement && event.shiftKey) {
+        console.log('focusing last element');
+        event.preventDefault();
+        lastElement.focus();
+      }
+    }
   };
 
   // Close big card or go to previous/next card when relevant key is pressed
@@ -56,6 +82,9 @@ function BigCard({
       }
       if (event.key === 'ArrowLeft') {
         showPreviousCard();
+      }
+      if (event.key === 'Tab') {
+        trapFocus(event);
       }
     };
 
@@ -80,6 +109,7 @@ function BigCard({
   return (
     <div
       className="big-card card"
+      ref={bigCardRef}
       style={{ '--card-colour': suspect.colour } as React.CSSProperties}
     >
       <div className="card--emoji">{suspect.emoji}</div>

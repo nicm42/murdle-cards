@@ -19,7 +19,6 @@ function SmallCard({
 }: Props) {
   const smallCardRef = useRef<HTMLDivElement>(null);
 
-  // Focus first card
   // Open big card when pressing enter or space
   useEffect(() => {
     if (index === 0) {
