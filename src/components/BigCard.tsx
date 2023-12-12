@@ -1,5 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { ISuspect } from '../App';
+import setCardDown from '../utils/setCardDown';
+import updateCardShowing from '../utils/updateCardShowing';
 import './BigCard.css';
 
 type Props = {
@@ -25,30 +27,15 @@ function BigCard({
   const nextButtonRef = useRef<HTMLButtonElement>(null);
   const setDownRef = useRef<HTMLButtonElement>(null);
 
-  const updateCardShowing = (cardToHide: number, cardToShow?: number) => {
-    const updatedCards = [...showBigCard];
-    updatedCards[cardToHide] = false;
-    if (cardToShow !== undefined) {
-      updatedCards[cardToShow] = true;
-    }
-    setShowBigCard(updatedCards);
-  };
-
-  const setCardDown = () => {
-    updateCardShowing(index);
-    setCardIndexClosed(index);
-    setLastClicked('');
-  };
-
   const showNextCard = () => {
     const cardToShow = index < showBigCard.length - 1 ? index + 1 : 0;
-    updateCardShowing(index, cardToShow);
+    updateCardShowing(showBigCard, setShowBigCard, index, cardToShow);
     setLastClicked('next');
   };
 
   const showPreviousCard = () => {
     const cardToShow = index > 0 ? index - 1 : showBigCard.length - 1;
-    updateCardShowing(index, cardToShow);
+    updateCardShowing(showBigCard, setShowBigCard, index, cardToShow);
     setLastClicked('previous');
   };
 
@@ -56,7 +43,13 @@ function BigCard({
   useEffect(() => {
     const handleKeyboard = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setCardDown();
+        setCardDown(
+          showBigCard,
+          setShowBigCard,
+          index,
+          setCardIndexClosed,
+          setLastClicked
+        );
       }
       if (event.key === 'ArrowRight') {
         showNextCard();
@@ -96,7 +89,15 @@ function BigCard({
       <button
         className="card--button card--button-setdown"
         ref={setDownRef}
-        onClick={setCardDown}
+        onClick={() =>
+          setCardDown(
+            showBigCard,
+            setShowBigCard,
+            index,
+            setCardIndexClosed,
+            setLastClicked
+          )
+        }
       >
         Set card down
       </button>
