@@ -29,6 +29,7 @@ function BigCard({
   const setDownRef = useRef<HTMLButtonElement>(null);
 
   const showNextCard = () => {
+    console.log('showing next card');
     const cardToShow = index < showBigCard.length - 1 ? index + 1 : 0;
     updateCardShowing(showBigCard, setShowBigCard, index, cardToShow);
     setLastClicked('next');
@@ -58,12 +59,30 @@ function BigCard({
       // if the firstElement has focus and shift key was pressed
       // then focus the lastElement
       if (document.activeElement === firstElement && event.shiftKey) {
-        console.log('focusing last element');
         event.preventDefault();
         lastElement.focus();
       }
     }
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!bigCardRef.current?.contains(event.target as Node)) {
+        setCardDown(
+          showBigCard,
+          setShowBigCard,
+          index,
+          setCardIndexClosed,
+          setLastClicked
+        );
+      }
+    };
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setCardDown]);
 
   // Close big card or go to previous/next card when relevant key is pressed
   useEffect(() => {
