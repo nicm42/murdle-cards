@@ -19,6 +19,7 @@ function App() {
     false,
   ]);
   const [lastClicked, setLastClicked] = useState<string>('');
+  const [cardIndexClosed, setCardIndexClosed] = useState<number>(-1);
 
   //const suspect = suspects[0];
   const suspects3 = suspects.slice(0, 3);
@@ -34,6 +35,7 @@ function App() {
             suspect={suspect}
             showBigCard={showBigCard}
             setShowBigCard={setShowBigCard}
+            cardIndexClosed={cardIndexClosed}
             index={index}
           />
         ))}
@@ -50,6 +52,7 @@ function App() {
                   setShowBigCard={setShowBigCard}
                   lastClicked={lastClicked}
                   setLastClicked={setLastClicked}
+                  setCardIndexClosed={setCardIndexClosed}
                   index={index}
                 />
               )

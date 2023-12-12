@@ -12,3 +12,7 @@
   padding: 0.25em;
   width: 150px;
 }
+
+.small-card:focus {
+  outline: 3px solid #1dacd6;
+}

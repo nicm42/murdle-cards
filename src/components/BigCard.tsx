@@ -8,6 +8,7 @@ type Props = {
   setShowBigCard: (showing: boolean[]) => void;
   lastClicked: string;
   setLastClicked: (clicked: string) => void;
+  setCardIndexClosed: (closed: number) => void;
   index: number;
 };
 
@@ -17,6 +18,7 @@ function BigCard({
   setShowBigCard,
   lastClicked,
   setLastClicked,
+  setCardIndexClosed,
   index,
 }: Props) {
   const previousButtonRef = useRef<HTMLButtonElement>(null);
@@ -34,6 +36,7 @@ function BigCard({
 
   const setCardDown = () => {
     updateCardShowing(index);
+    setCardIndexClosed(index);
     setLastClicked('');
   };
 
