@@ -23,6 +23,21 @@ function BigCard({
   const nextButtonRef = useRef<HTMLButtonElement>(null);
   const setDownRef = useRef<HTMLButtonElement>(null);
 
+  // Close big card when escape key is pressed
+  useEffect(() => {
+    const closeMenu = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setCardDown();
+      }
+    };
+    window.addEventListener('keydown', closeMenu);
+    return () => {
+      window.removeEventListener('keydown', closeMenu);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Focus relevant button
   useEffect(() => {
     if (lastClicked === 'next') {
       nextButtonRef.current?.focus();
