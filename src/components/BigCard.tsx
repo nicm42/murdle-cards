@@ -23,31 +23,6 @@ function BigCard({
   const nextButtonRef = useRef<HTMLButtonElement>(null);
   const setDownRef = useRef<HTMLButtonElement>(null);
 
-  // Close big card when escape key is pressed
-  useEffect(() => {
-    const closeMenu = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setCardDown();
-      }
-    };
-    window.addEventListener('keydown', closeMenu);
-    return () => {
-      window.removeEventListener('keydown', closeMenu);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Focus relevant button
-  useEffect(() => {
-    if (lastClicked === 'next') {
-      nextButtonRef.current?.focus();
-    } else if (lastClicked === 'previous') {
-      previousButtonRef.current?.focus();
-    } else {
-      setDownRef.current?.focus();
-    }
-  }, [lastClicked]);
-
   const updateCardShowing = (cardToHide: number, cardToShow?: number) => {
     const updatedCards = [...showBigCard];
     updatedCards[cardToHide] = false;
@@ -73,6 +48,38 @@ function BigCard({
     updateCardShowing(index, cardToShow);
     setLastClicked('previous');
   };
+
+  // Close big card or go to previous/next card when relevant key is pressed
+  useEffect(() => {
+    const handleKeyboard = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setCardDown();
+      }
+      if (event.key === 'ArrowRight') {
+        showNextCard();
+      }
+      if (event.key === 'ArrowLeft') {
+        showPreviousCard();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyboard);
+    return () => {
+      window.removeEventListener('keydown', handleKeyboard);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Focus relevant button
+  useEffect(() => {
+    if (lastClicked === 'next') {
+      nextButtonRef.current?.focus();
+    } else if (lastClicked === 'previous') {
+      previousButtonRef.current?.focus();
+    } else {
+      setDownRef.current?.focus();
+    }
+  }, [lastClicked]);
 
   return (
     <div
