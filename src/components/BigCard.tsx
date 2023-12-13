@@ -64,6 +64,7 @@ function BigCard({
     }
   };
 
+  // Close big card when clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!bigCardRef.current?.contains(event.target as Node)) {
@@ -80,8 +81,7 @@ function BigCard({
     return () => {
       document.removeEventListener('click', handleClickOutside, true);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setCardDown]);
+  }, [index, setCardIndexClosed, setLastClicked, showBigCard, setShowBigCard]);
 
   // Close big card or go to previous/next card when relevant key is pressed
   useEffect(() => {
@@ -110,8 +110,15 @@ function BigCard({
     return () => {
       window.removeEventListener('keydown', handleKeyboard);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [
+    index,
+    setCardIndexClosed,
+    setLastClicked,
+    showBigCard,
+    setShowBigCard,
+    showNextCard,
+    showPreviousCard,
+  ]);
 
   // Focus relevant button
   useEffect(() => {

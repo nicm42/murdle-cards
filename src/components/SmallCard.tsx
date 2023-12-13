@@ -33,8 +33,7 @@ function SmallCard({
         smallCardRef.current?.focus();
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cardIndexClosed]);
+  }, [cardIndexClosed, showBigCard, index]);
 
   const handleKeyboardOnCard = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
