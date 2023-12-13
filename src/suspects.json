@@ -85,8 +85,8 @@
   },
   {
     "name": "Dean Glaucous",
-    "colour": "",
-    "emoji": "",
+    "colour": "#6082b6",
+    "emoji": "👨‍🎓",
     "description": "The dean of some such-and-such department at a massively funded research university. What does he do? Well, he handles the money, for one...",
     "details": "5'6\" • RIGHT-HANDED • BROWN EYES • BROWN HAIR • VIRGO"
   },
@@ -148,8 +148,8 @@
   },
   {
     "name": "Mayor Honey",
-    "colour": "",
-    "emoji": "",
+    "colour": "#f6ae2d",
+    "emoji": "👨‍💼",
     "description": "He knows where the bodies are buried, and he makes sure they always vote for him.",
     "details": "6'0\" • LEFT-HANDED • HAZEL EYES • BROWN HAIR • SCORPIO"
   },
