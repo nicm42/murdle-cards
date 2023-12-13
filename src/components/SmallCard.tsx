@@ -19,27 +19,12 @@ function SmallCard({
 }: Props) {
   const smallCardRef = useRef<HTMLDivElement>(null);
 
-  // Open big card when pressing enter or space
+  // Focus first card
   useEffect(() => {
     if (index === 0) {
       smallCardRef.current?.focus();
     }
-
-    const handleKeyboard = (event: KeyboardEvent) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        if (document.activeElement === smallCardRef.current) {
-          setBigCardToShow();
-        }
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyboard);
-    return () => {
-      window.removeEventListener('keydown', handleKeyboard);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [index]);
 
   // Focus small card of big card closed
   useEffect(() => {
@@ -50,6 +35,13 @@ function SmallCard({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardIndexClosed]);
+
+  const handleKeyboardOnCard = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setBigCardToShow();
+    }
+  };
 
   const setBigCardToShow = () => {
     const updatedCards = [...showBigCard];
@@ -65,6 +57,7 @@ function SmallCard({
       ref={smallCardRef}
       style={{ '--card-colour': suspect.colour } as React.CSSProperties}
       onClick={setBigCardToShow}
+      onKeyDown={(e) => handleKeyboardOnCard(e)}
     >
       <div className="card--emoji">{suspect.emoji}</div>
       <h2 className="card--name">{suspect.name}</h2>

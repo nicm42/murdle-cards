@@ -29,7 +29,6 @@ function BigCard({
   const setDownRef = useRef<HTMLButtonElement>(null);
 
   const showNextCard = () => {
-    console.log('showing next card');
     const cardToShow = index < showBigCard.length - 1 ? index + 1 : 0;
     updateCardShowing(showBigCard, setShowBigCard, index, cardToShow);
     setLastClicked('next');
