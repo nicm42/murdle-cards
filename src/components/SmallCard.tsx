@@ -66,9 +66,7 @@ function SmallCard({
 
   return (
     <div
-      className={
-        isFrontShowing ? 'card small-card show-front' : 'card small-card'
-      }
+      className={`card small-card ${isFrontShowing ? 'show-front' : ''}`}
       role="button"
       tabIndex={0}
       ref={smallCardRef}
