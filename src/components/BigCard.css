@@ -9,6 +9,8 @@
 }
 
 .big-card {
+  background-color: #fffdf5;
+  border: 5px solid #000000;
   cursor: auto;
   left: 50%;
   height: fit-content;

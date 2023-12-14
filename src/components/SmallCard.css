@@ -9,10 +9,48 @@
 .small-card {
   cursor: pointer;
   height: 200px;
-  padding: 0.25em;
+  perspective: 1000px;
   width: 150px;
 }
 
 .small-card:focus {
   outline: 3px solid #1dacd6;
+}
+
+.small-card-inner {
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: rotate 500ms linear;
+  width: 100%;
+}
+
+.small-card:hover .small-card-inner {
+  rotate: y 180deg;
+}
+
+.small-card-front,
+.small-card-back {
+  backface-visibility: hidden;
+  border: 5px solid #000000;
+  display: grid;
+  inset: 0;
+  padding: 0.25em;
+  place-content: center;
+  position: absolute;
+}
+
+.small-card-back {
+  background-color: #a30b37;
+  font-size: 500%;
+}
+
+.small-card-front {
+  background-color: #fffdf5;
+  rotate: y 180deg;
+}
+
+.card-back--emoji {
+  color: transparent;
+  text-shadow: 0 0 0 #fff5e2;
 }

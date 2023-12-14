@@ -58,8 +58,15 @@ function SmallCard({
       onClick={setBigCardToShow}
       onKeyDown={(e) => handleKeyboardOnCard(e)}
     >
-      <div className="card--emoji">{suspect.emoji}</div>
-      <h2 className="card--name">{suspect.name}</h2>
+      <div className="small-card-inner">
+        <div className="small-card-back">
+          <div className="card-back--emoji">🔎</div>
+        </div>
+        <div className="small-card-front">
+          <div className="card--emoji">{suspect.emoji}</div>
+          <h2 className="card--name">{suspect.name}</h2>
+        </div>
+      </div>
     </div>
   );
 }
