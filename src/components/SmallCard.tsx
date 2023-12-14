@@ -42,13 +42,16 @@ function SmallCard({
   const handleKeyboardOnCard = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      setBigCardToShow();
+      if (!isFrontShowing) {
+        setIsFrontShowing(true);
+      } else {
+        setBigCardToShow();
+      }
     }
   };
 
   const handleCardClick = () => {
     if (!isFrontShowing) {
-      // TODO show front of all of them
       setIsFrontShowing(true);
     } else {
       setBigCardToShow();
