@@ -20,6 +20,7 @@ function App() {
   ]);
   const [lastClicked, setLastClicked] = useState<string>('');
   const [cardIndexClosed, setCardIndexClosed] = useState<number>(-1);
+  const [isFrontShowing, setIsFrontShowing] = useState<boolean>(false);
 
   //const suspect = suspects[0];
   const suspects3 = suspects.slice(0, 3);
@@ -36,6 +37,8 @@ function App() {
             showBigCard={showBigCard}
             setShowBigCard={setShowBigCard}
             cardIndexClosed={cardIndexClosed}
+            isFrontShowing={isFrontShowing}
+            setIsFrontShowing={setIsFrontShowing}
             index={index}
           />
         ))}

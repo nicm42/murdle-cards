@@ -7,6 +7,8 @@ type Props = {
   showBigCard: boolean[];
   setShowBigCard: (showing: boolean[]) => void;
   cardIndexClosed: number;
+  isFrontShowing: boolean;
+  setIsFrontShowing: (showing: boolean) => void;
   index: number;
 };
 
@@ -15,6 +17,8 @@ function SmallCard({
   showBigCard,
   setShowBigCard,
   cardIndexClosed,
+  isFrontShowing,
+  setIsFrontShowing,
   index,
 }: Props) {
   const smallCardRef = useRef<HTMLDivElement>(null);
@@ -42,6 +46,15 @@ function SmallCard({
     }
   };
 
+  const handleCardClick = () => {
+    if (!isFrontShowing) {
+      // TODO show front of all of them
+      setIsFrontShowing(true);
+    } else {
+      setBigCardToShow();
+    }
+  };
+
   const setBigCardToShow = () => {
     const updatedCards = [...showBigCard];
     updatedCards[index] = true;
@@ -50,12 +63,14 @@ function SmallCard({
 
   return (
     <div
-      className="card small-card"
+      className={
+        isFrontShowing ? 'card small-card show-front' : 'card small-card'
+      }
       role="button"
       tabIndex={0}
       ref={smallCardRef}
       style={{ '--card-colour': suspect.colour } as React.CSSProperties}
-      onClick={setBigCardToShow}
+      onClick={handleCardClick}
       onKeyDown={(e) => handleKeyboardOnCard(e)}
     >
       <div className="small-card-inner">

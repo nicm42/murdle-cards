@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-.small-card:hover .small-card-inner {
+.small-card.show-front .small-card-inner {
   rotate: y 180deg;
 }
 
