@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import ISuspect from '../utils/ISuspect';
+import smallCardClick from '../utils/smallCardClick';
 import './SmallCard.css';
 
 type Props = {
@@ -42,26 +43,14 @@ function SmallCard({
   const handleKeyboardOnCard = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      if (!isFrontShowing) {
-        setIsFrontShowing(true);
-      } else {
-        setBigCardToShow();
-      }
+      smallCardClick(
+        isFrontShowing,
+        setIsFrontShowing,
+        showBigCard,
+        setShowBigCard,
+        index
+      );
     }
-  };
-
-  const handleCardClick = () => {
-    if (!isFrontShowing) {
-      setIsFrontShowing(true);
-    } else {
-      setBigCardToShow();
-    }
-  };
-
-  const setBigCardToShow = () => {
-    const updatedCards = [...showBigCard];
-    updatedCards[index] = true;
-    setShowBigCard(updatedCards);
   };
 
   return (
@@ -71,7 +60,15 @@ function SmallCard({
       tabIndex={0}
       ref={smallCardRef}
       style={{ '--card-colour': suspect.colour } as React.CSSProperties}
-      onClick={handleCardClick}
+      onClick={() =>
+        smallCardClick(
+          isFrontShowing,
+          setIsFrontShowing,
+          showBigCard,
+          setShowBigCard,
+          index
+        )
+      }
       onKeyDown={(e) => handleKeyboardOnCard(e)}
     >
       <div className="small-card-inner">

@@ -1,7 +1,8 @@
 import { useRef, useEffect } from 'react';
 import ISuspect from '../utils/ISuspect';
 import setCardDown from '../utils/setCardDown';
-import updateCardShowing from '../utils/updateCardShowing';
+import showNextCard from '../utils/showNextCard';
+import showPreviousCard from '../utils/showPreviousCard';
 import './BigCard.css';
 
 type Props = {
@@ -27,18 +28,6 @@ function BigCard({
   const previousButtonRef = useRef<HTMLButtonElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);
   const setDownRef = useRef<HTMLButtonElement>(null);
-
-  const showNextCard = () => {
-    const cardToShow = index < showBigCard.length - 1 ? index + 1 : 0;
-    updateCardShowing(showBigCard, setShowBigCard, index, cardToShow);
-    setLastClicked('next');
-  };
-
-  const showPreviousCard = () => {
-    const cardToShow = index > 0 ? index - 1 : showBigCard.length - 1;
-    updateCardShowing(showBigCard, setShowBigCard, index, cardToShow);
-    setLastClicked('previous');
-  };
 
   const trapFocus = (event: KeyboardEvent) => {
     // Find all the buttons
@@ -96,10 +85,10 @@ function BigCard({
         );
       }
       if (event.key === 'ArrowRight') {
-        showNextCard();
+        showNextCard(showBigCard, setShowBigCard, setLastClicked, index);
       }
       if (event.key === 'ArrowLeft') {
-        showPreviousCard();
+        showPreviousCard(showBigCard, setShowBigCard, setLastClicked, index);
       }
       if (event.key === 'Tab') {
         trapFocus(event);
@@ -110,15 +99,7 @@ function BigCard({
     return () => {
       window.removeEventListener('keydown', handleKeyboard);
     };
-  }, [
-    index,
-    setCardIndexClosed,
-    setLastClicked,
-    showBigCard,
-    setShowBigCard,
-    showNextCard,
-    showPreviousCard,
-  ]);
+  }, [index, setCardIndexClosed, setLastClicked, showBigCard, setShowBigCard]);
 
   // Focus relevant button
   useEffect(() => {
@@ -161,7 +142,9 @@ function BigCard({
           className="card--button card--button-arrow card--button-arrow-prev"
           aria-label="Previous card"
           ref={previousButtonRef}
-          onClick={showPreviousCard}
+          onClick={() =>
+            showPreviousCard(showBigCard, setShowBigCard, setLastClicked, index)
+          }
         >
           <span>⮕</span>
         </button>
@@ -169,7 +152,9 @@ function BigCard({
           className="card--button card--button-arrow card--button-arrow-next"
           aria-label="Next card"
           ref={nextButtonRef}
-          onClick={showNextCard}
+          onClick={() =>
+            showNextCard(showBigCard, setShowBigCard, setLastClicked, index)
+          }
         >
           <span>⮕</span>
         </button>
