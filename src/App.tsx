@@ -24,16 +24,22 @@ function App() {
   const [isFrontShowing, setIsFrontShowing] = useState<boolean>(false);
 
   // Show a random number of suspects from 3-6
-  // We don't want this to change on re-render, hence making it a ref
+  // And choose those suspects at random
+  // We don't want this to change on re-render, hence making them refs
   const numberOfSuspects = useRef<number>(randomNumber(3, 6));
-  const suspectsToShow = suspects.slice(0, numberOfSuspects.current);
+  const shuffledSuspects = useRef<ISuspect[]>(
+    suspects.sort(() => 0.5 - Math.random())
+  );
+  const suspectsToShow = useRef<ISuspect[]>(
+    shuffledSuspects.current.slice(0, numberOfSuspects.current)
+  );
 
   const anyBigCardsShowing: boolean = showBigCard.some((element) => element);
 
   return (
     <>
       <div className={`small-cards suspects-${numberOfSuspects.current}`}>
-        {suspectsToShow.map((suspect, index) => (
+        {suspectsToShow.current.map((suspect, index) => (
           <SmallCard
             key={suspect.name}
             suspect={suspect}
@@ -48,7 +54,7 @@ function App() {
       </div>
       {anyBigCardsShowing && (
         <div className="big-cards">
-          {suspectsToShow.map(
+          {suspectsToShow.current.map(
             (suspect, index) =>
               showBigCard[index] && (
                 <BigCard
