@@ -2,16 +2,9 @@ import { useState, useRef } from 'react';
 import SmallCard from './components/SmallCard';
 import BigCard from './components/BigCard';
 import randomNumber from './utils/randomNumber';
+import ISuspect from './utils/ISuspect';
 import './App.css';
 import suspects from './suspects.json';
-
-export interface ISuspect {
-  name: string;
-  colour?: string;
-  emoji?: string;
-  description: string;
-  details: string;
-}
 
 function App() {
   const [showBigCard, setShowBigCard] = useState<boolean[]>([

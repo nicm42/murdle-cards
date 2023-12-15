@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { ISuspect } from '../App';
+import ISuspect from '../utils/ISuspect';
 import setCardDown from '../utils/setCardDown';
 import updateCardShowing from '../utils/updateCardShowing';
 import './BigCard.css';
