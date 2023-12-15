@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import SmallCard from './components/SmallCard';
 import BigCard from './components/BigCard';
+import randomNumber from './utils/randomNumber';
 import './App.css';
 import suspects from './suspects.json';
 
@@ -22,17 +23,17 @@ function App() {
   const [cardIndexClosed, setCardIndexClosed] = useState<number>(-1);
   const [isFrontShowing, setIsFrontShowing] = useState<boolean>(false);
 
-  const numberOfSuspects = 6;
-
-  //const suspect = suspects[0];
-  const suspects3 = suspects.slice(0, numberOfSuspects);
+  // Show a random number of suspects from 3-6
+  // We don't want this to change on re-render, hence making it a ref
+  const numberOfSuspects = useRef<number>(randomNumber(3, 6));
+  const suspectsToShow = suspects.slice(0, numberOfSuspects.current);
 
   const anyBigCardsShowing: boolean = showBigCard.some((element) => element);
 
   return (
     <>
-      <div className={`small-cards suspects-${numberOfSuspects}`}>
-        {suspects3.map((suspect, index) => (
+      <div className={`small-cards suspects-${numberOfSuspects.current}`}>
+        {suspectsToShow.map((suspect, index) => (
           <SmallCard
             key={suspect.name}
             suspect={suspect}
@@ -47,7 +48,7 @@ function App() {
       </div>
       {anyBigCardsShowing && (
         <div className="big-cards">
-          {suspects3.map(
+          {suspectsToShow.map(
             (suspect, index) =>
               showBigCard[index] && (
                 <BigCard
