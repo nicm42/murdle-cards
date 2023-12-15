@@ -30,7 +30,7 @@
   {
     "name": "Brother Brownstone",
     "colour": "#834333",
-    "emoji": "🦲",
+    "emoji": "",
     "description": "A monk who has dedicated his life to the church, specifically to making money for it.",
     "details": "5'4\" • Left-handed • Brown eyes • Brown hair • Capricorn"
   },
@@ -197,8 +197,8 @@
   },
   {
     "name": "Signor Emerald",
-    "colour": "",
-    "emoji": "",
+    "colour": "#33ca7f",
+    "emoji": "🤵",
     "description": "An Italian jeweler of great renown, Signor Emerald has traveled the world in search of rare precious stones, which are always falling out of his pockets.",
     "details": "5'8\" • LEFT-HANDED • BROWN EYES • BLACK HAIR • SAGITTARIUS"
   },
@@ -225,8 +225,8 @@
   },
   {
     "name": "The Amazing Aureolin",
-    "colour": "",
-    "emoji": "",
+    "colour": "#f2db00",
+    "emoji": "🦹",
     "description": "The Amazing Aureolin is a touring magician who has perfected the whole sawing-the-husband-in-two routine. Then, she made the body disappear. For her next trick, she's going to need a volunteer.",
     "details": "5'6\" • LEFT-HANDED • GREEN EYES • BLOND HAIR • ARIES"
   },
@@ -239,8 +239,8 @@
   },
   {
     "name": "Uncle Midnight",
-    "colour": "",
-    "emoji": "",
+    "colour": "#000000",
+    "emoji": "🕺",
     "description": "When his dad died, he bought a desert mansion with a pool and retired. He was 17.",
     "details": "5'8\" • LEFT-HANDED • BLUE EYES • BROWN HAIR • SAGITTARIUS"
   },
