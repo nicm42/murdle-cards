@@ -22,14 +22,16 @@ function App() {
   const [cardIndexClosed, setCardIndexClosed] = useState<number>(-1);
   const [isFrontShowing, setIsFrontShowing] = useState<boolean>(false);
 
+  const numberOfSuspects = 6;
+
   //const suspect = suspects[0];
-  const suspects3 = suspects.slice(0, 3);
+  const suspects3 = suspects.slice(0, numberOfSuspects);
 
   const anyBigCardsShowing: boolean = showBigCard.some((element) => element);
 
   return (
     <>
-      <div className="small-cards">
+      <div className={`small-cards suspects-${numberOfSuspects}`}>
         {suspects3.map((suspect, index) => (
           <SmallCard
             key={suspect.name}

@@ -1,3 +1,36 @@
+.small-cards {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--small-card-flex-gap);
+  height: 100%;
+  justify-content: center;
+}
+
+.small-cards.suspects-4 {
+  width: calc((var(--small-card-width) * 2) + (var(--small-card-flex-gap) * 1));
+  margin-inline: auto;
+  align-content: center;
+}
+
+.small-cards.suspects-3,
+.small-cards.suspects-5,
+.small-cards.suspects-6 {
+  width: calc((var(--small-card-width) * 3) + (var(--small-card-flex-gap) * 2));
+  margin-inline: auto;
+  align-content: center;
+}
+
+.big-cards {
+  background: white;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .card {
   display: flex;
   flex-direction: column;

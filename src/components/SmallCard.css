@@ -1,11 +1,3 @@
-.small-cards {
-  align-items: center;
-  display: flex;
-  gap: 0.625em;
-  height: 100%;
-  justify-content: center;
-}
-
 .small-card {
   cursor: pointer;
   height: 200px;

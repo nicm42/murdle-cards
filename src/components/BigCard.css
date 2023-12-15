@@ -1,13 +1,3 @@
-.big-cards {
-  background: white;
-  height: 100%;
-  left: 0;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
 .big-card {
   background-color: #fffdf5;
   border: 5px solid #000000;
