@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import SmallCard from './components/SmallCard';
 import BigCard from './components/BigCard';
 import randomNumber from './utils/randomNumber';
@@ -7,11 +7,6 @@ import './App.css';
 import suspects from './suspects.json';
 
 function App() {
-  const [showBigCard, setShowBigCard] = useState<boolean[]>([
-    false,
-    false,
-    false,
-  ]);
   const [lastClicked, setLastClicked] = useState<string>('');
   const [cardIndexClosed, setCardIndexClosed] = useState<number>(-1);
   const [isFrontShowing, setIsFrontShowing] = useState<boolean>(false);
@@ -25,6 +20,14 @@ function App() {
   );
   const suspectsToShow = useRef<ISuspect[]>(
     shuffledSuspects.current.slice(0, numberOfSuspects.current)
+  );
+
+  // Now we know how many there are we can set the initial state of showBigCard
+  const showBigCardInitialState = useMemo(() => {
+    return new Array(numberOfSuspects.current).fill(false);
+  }, []);
+  const [showBigCard, setShowBigCard] = useState<boolean[]>(
+    showBigCardInitialState
   );
 
   const anyBigCardsShowing: boolean = showBigCard.some((element) => element);
