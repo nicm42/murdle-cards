@@ -13,19 +13,20 @@ function App() {
 
   // Show a random number of suspects from 3-6
   // And choose those suspects at random
-  // We don't want this to change on re-render, hence making them refs
-  const numberOfSuspects = useRef<number>(randomNumber(3, 6));
-  const shuffledSuspects = useRef<ISuspect[]>(
-    suspects.sort(() => 0.5 - Math.random())
-  );
+  const numberOfSuspects: number = useMemo(() => {
+    return randomNumber(3, 6);
+  }, []);
+  const shuffledSuspects: ISuspect[] = useMemo(() => {
+    return suspects.sort(() => 0.5 - Math.random());
+  }, []);
   const suspectsToShow = useRef<ISuspect[]>(
-    shuffledSuspects.current.slice(0, numberOfSuspects.current)
+    shuffledSuspects.slice(0, numberOfSuspects)
   );
 
   // Now we know how many there are we can set the initial state of showBigCard
-  const showBigCardInitialState = useMemo(() => {
-    return new Array(numberOfSuspects.current).fill(false);
-  }, []);
+  const showBigCardInitialState: boolean[] = useMemo(() => {
+    return new Array(numberOfSuspects).fill(false);
+  }, [numberOfSuspects]);
   const [showBigCard, setShowBigCard] = useState<boolean[]>(
     showBigCardInitialState
   );
@@ -34,7 +35,7 @@ function App() {
 
   return (
     <>
-      <div className={`small-cards suspects-${numberOfSuspects.current}`}>
+      <div className={`small-cards suspects-${numberOfSuspects}`}>
         {suspectsToShow.current.map((suspect, index) => (
           <SmallCard
             key={suspect.name}
