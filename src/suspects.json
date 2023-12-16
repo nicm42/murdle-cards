@@ -30,7 +30,7 @@
   {
     "name": "Brother Brownstone",
     "colour": "#834333",
-    "emoji": "",
+    "emoji": "👨‍",
     "description": "A monk who has dedicated his life to the church, specifically to making money for it.",
     "details": "5'4\" • Left-handed • Brown eyes • Brown hair • Capricorn"
   },
@@ -50,15 +50,15 @@
   },
   {
     "name": "Chef Aubergine",
-    "colour": "",
-    "emoji": "",
+    "colour": "#000000",
+    "emoji": "👤",
     "description": "It is said that she once killed her husband, cooked him, and then served him at her restaurant. It's not true, but even the fact that it's said about her tells you something. Faintly smells of onions (and, surprisingly, in a good way).",
     "details": "5'2\" • RIGHT-HANDED • BLUE EYES • BLOND HAIR • LIBRA"
   },
   {
     "name": "Coach Raspberry",
-    "colour": "",
-    "emoji": "",
+    "colour": "#000000",
+    "emoji": "👤",
     "description": "One of the best coaches this side of the Mississippi, regardless of which side you happen to be on. Some people say he has a gambling problem, but he just says he loves danger.",
     "details": "6'0\" • LEFT-HANDED • BLUE EYES • BLOND HAIR • ARIES"
   },
@@ -120,22 +120,22 @@
   },
   {
     "name": "Grandmaster Rose",
-    "colour": "",
-    "emoji": "",
+    "colour": "#000000",
+    "emoji": "👤",
     "description": "A chess grandmaster who is always plotting his next move. Like how to bump off his next opponent!",
     "details": "5'7\" • LEFT-HANDED • BROWN EYES • BROWN HAIR • SCORPIO"
   },
   {
     "name": "Judge Pine",
-    "colour": "",
-    "emoji": "",
+    "colour": "#097a74",
+    "emoji": "👩‍⚖️",
     "description": "Master of the courtroom and possessed of a firm belief in justice, as decided by her and her alone.",
     "details": "5'6\" • RIGHT-HANDED • BROWN EYES • BLACK HAIR • TAURUS"
   },
   {
     "name": "Lady Violet",
-    "colour": "",
-    "emoji": "",
+    "colour": "#000000",
+    "emoji": "👤",
     "description": "An heiress to empire, the daughter of a duke, as stuck-up and sophisticated as a person can be.",
     "details": "5'0\" • RIGHT-HANDED • BLUE EYES • BLOND HAIR • VIRGO"
   },
@@ -155,7 +155,7 @@
   },
   {
     "name": "Miss Saffron",
-    "data-name": "#f4c430",
+    "colour": "#f4c430",
     "emoji": "👱‍♀️",
     "description": "Gorgeous and stunning, but maybe not all there in the brains department. Or maybe that's what she wants you to think. Or maybe she wants you to think that's what she wants you to think. Her pet poodle accompanies her everywhere she goes.",
     "details": "5'2\" • Left-handed • Hazel eyes • Blond hair • Libra"
@@ -169,8 +169,8 @@
   },
   {
     "name": "Officer Copper",
-    "colour": "",
-    "emoji": "",
+    "colour": "#000000",
+    "emoji": "👤",
     "description": "The best part of being a policewoman criminal is that you can fail to investigate your own crimes and cut out the middleman.",
     "details": "5'5\" • RIGHT-HANDED • BLUE EYES • BLOND HAIR • ARIES"
   },
@@ -204,7 +204,7 @@
   },
   {
     "name": "Silverton The Legend",
-    "colour": "",
+    "colour": "#c0c0c0",
     "emoji": "👑",
     "description": "An acclaimed actor of the Golden Age, now in his golden years.",
     "details": "6'4\" • RIGHT-HANDED • BLUE EYES • SILVER HAIR • LEO"
@@ -246,8 +246,8 @@
   },
   {
     "name": "Vice President Mauve",
-    "colour": "",
-    "emoji": "",
+    "colour": "#e0b0ff",
+    "emoji": "👩‍💻",
     "description": "Vice President of TekCo Futures. If she asks you to step into her metaverse, scream.",
     "details": "5'8\" • RIGHT-HANDED • BROWN EYES • BLACK HAIR • TAURUS"
   },
