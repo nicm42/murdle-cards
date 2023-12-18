@@ -3,7 +3,7 @@
   border: 5px solid #000000;
   cursor: auto;
   left: 50%;
-  height: fit-content;
+  height: 41.75em;
   min-height: 550px;
   padding-bottom: 1.25em;
   padding-inline: 0.625em;
@@ -11,7 +11,7 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 370px;
+  width: 25.75em;
 }
 
 .big-card .card--name {
@@ -36,6 +36,7 @@
   font-family: courier;
   font-size: 1.2rem;
   font-weight: 700;
+  flex-grow: 1;
   line-height: 1.7;
   text-align: center;
   text-transform: uppercase;
@@ -80,5 +81,4 @@
 
 .card--button-setdown {
   flex-shrink: 0;
-  flex-grow: 1;
 }

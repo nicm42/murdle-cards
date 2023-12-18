@@ -122,21 +122,6 @@ function BigCard({
       <h2 className="card--name">{suspect.name}</h2>
       <p className="card--description">{suspect.description}</p>
       <p className="card--details">{suspect.details}</p>
-      <button
-        className="card--button card--button-setdown"
-        ref={setDownRef}
-        onClick={() =>
-          setCardDown(
-            showBigCard,
-            setShowBigCard,
-            index,
-            setCardIndexClosed,
-            setLastClicked
-          )
-        }
-      >
-        Set card down
-      </button>
       <div className="card--buttons">
         <button
           className="card--button card--button-arrow card--button-arrow-prev"
@@ -147,6 +132,21 @@ function BigCard({
           }
         >
           <span>⮕</span>
+        </button>
+        <button
+          className="card--button card--button-setdown"
+          ref={setDownRef}
+          onClick={() =>
+            setCardDown(
+              showBigCard,
+              setShowBigCard,
+              index,
+              setCardIndexClosed,
+              setLastClicked
+            )
+          }
+        >
+          Set card down
         </button>
         <button
           className="card--button card--button-arrow card--button-arrow-next"
