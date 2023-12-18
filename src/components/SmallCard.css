@@ -1,6 +1,6 @@
 .small-card {
   cursor: pointer;
-  height: 11.25em;
+  height: 11.5em;
   perspective: 1000px;
   width: var(--small-card-width);
 }
@@ -26,8 +26,9 @@
   backface-visibility: hidden;
   border: 5px solid #000000;
   display: grid;
+  grid-template-rows: auto 1fr;
   inset: 0;
-  padding: 0.25em;
+  padding: 0.5em;
   place-content: center;
   position: absolute;
 }
@@ -45,4 +46,8 @@
 .card-back--emoji {
   color: transparent;
   text-shadow: 0 0 0 #fff5e2;
+}
+
+.small-card .card--name {
+  align-self: center;
 }
