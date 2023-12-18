@@ -1,6 +1,6 @@
 .small-card {
   cursor: pointer;
-  height: 200px;
+  height: 11.25em;
   perspective: 1000px;
   width: var(--small-card-width);
 }

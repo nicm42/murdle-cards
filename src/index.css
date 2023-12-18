@@ -1,6 +1,6 @@
 :root {
   --card-color: #000000;
-  --small-card-width: 150px;
+  --small-card-width: 9em;
   --small-card-flex-gap: 0.625em;
 }
 
