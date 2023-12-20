@@ -31,14 +31,14 @@ Note: this will only display properly on a reasonably sized screen, since all of
 ## Technologies
 
 - React
-- Vite
-- Vitest
+- TypeScript
 - CSS
+- Vite
 - Cypress
 
 ## Setup
 
-To view this project visit the demo TBC or download the files, open a terminal in that folder and install locally using npm:
+To view this project visit the [demo](https://murdle-cards.pages.dev/) or download the files, open a terminal in that folder and install locally using npm:
 
 ```
 npm install
