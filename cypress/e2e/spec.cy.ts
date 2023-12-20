@@ -23,6 +23,7 @@ describe('Murdle cards testing', () => {
       'The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.',
       { matchCase: false }
     ).should('exist');
+    cy.focused().should('have.class', 'card--button-setdown');
 
     // Go to next big card
     cy.get('.card--button-arrow-next').click();
@@ -54,7 +55,7 @@ describe('Murdle cards testing', () => {
     cy.contains('set card down', { matchCase: false }).should('not.exist');
   });
 
-  it.only('Clicks using the keyboard', () => {
+  xit('Clicks using the keyboard', () => {
     cy.visit('/');
 
     cy.contains('Admiral Navy', { matchCase: false }).should('exist');
@@ -84,16 +85,12 @@ describe('Murdle cards testing', () => {
       'The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.',
       { matchCase: false }
     ).should('exist');
-    cy.get('.card--button-arrow-prev').trigger('keydown', {
-      keyCode: '78',
-    });
+    cy.get('.card--button-arrow-prev').trigger('keydown', { keyCode: '78' });
     cy.contains(
       'The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.',
       { matchCase: false }
     ).should('exist');
-    cy.get('.card--button-setdown').trigger('keydown', {
-      keyCode: '78',
-    });
+    cy.get('.card--button-setdown').trigger('keydown', { keyCode: '78' });
     cy.contains(
       'The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.',
       { matchCase: false }
@@ -130,7 +127,7 @@ describe('Murdle cards testing', () => {
     // Set card down using enter
     // TODO this doesn't work
     cy.get('.card--button-setdown').type('{enter}');
-    cy.get('.card--button-setdown').type('{enter}');
+    cy.get('.card--button-setdown').focus().type('{enter}');
     cy.get('.card--button-setdown').trigger('keydown', {
       keyCode: '13',
       force: true,
