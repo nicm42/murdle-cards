@@ -13,23 +13,21 @@ function App() {
 
   // Show a random number of suspects from 3-6
   // And choose those suspects at random
-  // TODO uncomment after testing
-  /* const numberOfSuspects: number = useMemo(() => {
-    return randomNumber(3, 6);
-  }, []); */
-  // For testing
   const numberOfSuspects: number = useMemo(() => {
+    return randomNumber(3, 6);
+  }, []);
+  // For testing
+  /* const numberOfSuspects: number = useMemo(() => {
     return randomNumber(3, 3);
   }, []);
-  // TODO uncomment after testing
-  /* const shuffledSuspects: ISuspect[] = useMemo(() => {
+  */ const shuffledSuspects: ISuspect[] = useMemo(() => {
     return suspects.sort(() => 0.5 - Math.random());
-  }, []); */
+  }, []);
   // For testing
-  const shuffledSuspects: ISuspect[] = useMemo(() => {
+  /* const shuffledSuspects: ISuspect[] = useMemo(() => {
     return suspects;
   }, []);
-  const suspectsToShow = useRef<ISuspect[]>(
+ */ const suspectsToShow = useRef<ISuspect[]>(
     shuffledSuspects.slice(0, numberOfSuspects)
   );
 
