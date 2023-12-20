@@ -2,9 +2,10 @@
 /// <reference types="cypress-plugin-tab" />
 
 describe('Murdle cards testing', () => {
-  it('Clicks using the mouse', () => {
+  it.only('Clicks using the mouse', () => {
     cy.visit('/');
 
+    cy.get('.small-card').should('have.length', 3);
     cy.contains('Admiral Navy', { matchCase: false }).should('exist');
     cy.contains('Babyface Blue', { matchCase: false }).should('exist');
     cy.contains('Baron Maroon', { matchCase: false }).should('exist');
@@ -37,9 +38,15 @@ describe('Murdle cards testing', () => {
       { matchCase: false }
     ).should('exist');
 
-    // Set card down
+    // Go to next card then set card down
+    cy.get('.card--button-arrow-next').click();
+    cy.contains(
+      'This is absolutely one fully grown man, and not 2 kids in a trench-coat. They can do adult things like see R rated movies, buy beer, and stay out way past bedtime.',
+      { matchCase: false }
+    ).should('exist');
     cy.contains('set card down', { matchCase: false }).click();
     cy.contains('set card down', { matchCase: false }).should('not.exist');
+    cy.focused().should('include.text', 'Babyface Blue');
 
     // set card down when clicking outside
     cy.get('.small-card').first().click();
@@ -47,7 +54,7 @@ describe('Murdle cards testing', () => {
     cy.contains('set card down', { matchCase: false }).should('not.exist');
   });
 
-  it.only('Clicks using the keyboard', () => {
+  it('Clicks using the keyboard', () => {
     cy.visit('/');
 
     cy.contains('Admiral Navy', { matchCase: false }).should('exist');
