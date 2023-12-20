@@ -2,7 +2,7 @@
 /// <reference types="cypress-plugin-tab" />
 
 describe('Murdle cards testing', () => {
-  it.only('Clicks using the mouse', () => {
+  it('Clicks using the mouse', () => {
     cy.visit('/');
 
     cy.get('.small-card').should('have.length', 3);
@@ -54,16 +54,12 @@ describe('Murdle cards testing', () => {
     cy.contains('set card down', { matchCase: false }).should('not.exist');
   });
 
-  it('Clicks using the keyboard', () => {
+  it.only('Clicks using the keyboard', () => {
     cy.visit('/');
 
     cy.contains('Admiral Navy', { matchCase: false }).should('exist');
     cy.contains('Babyface Blue', { matchCase: false }).should('exist');
     cy.contains('Baron Maroon', { matchCase: false }).should('exist');
-
-    // TODO this doesn't work
-    /* cy.get('.small-card-back').first().should('be.visible');
-    cy.get('.small-card-front').first().should('not.be.visible'); */
 
     // Pressing a random key doesn't turn the cards over
     cy.get('.small-card').first().type('n');
@@ -83,22 +79,25 @@ describe('Murdle cards testing', () => {
     ).should('exist');
 
     // Pressing a random key doesn't change the big card
-    // TODO why is this going to the next card?
-    cy.get('.card--button-arrow-next').type('n');
+    cy.get('.card--button-arrow-next').trigger('keydown', { keyCode: '78' });
     cy.contains(
       'The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.',
       { matchCase: false }
     ).should('exist');
-    /* cy.get('.card--button-arrow-prev').type('n');
+    cy.get('.card--button-arrow-prev').trigger('keydown', {
+      keyCode: '78',
+    });
     cy.contains(
       'The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.',
       { matchCase: false }
     ).should('exist');
-    cy.get('.card--button-setdown').type('n');
+    cy.get('.card--button-setdown').trigger('keydown', {
+      keyCode: '78',
+    });
     cy.contains(
       'The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.',
       { matchCase: false }
-    ).should('exist'); */
+    ).should('exist');
 
     // Go to next big card using enter
     cy.get('.card--button-arrow-next').type('{enter}');
@@ -131,10 +130,11 @@ describe('Murdle cards testing', () => {
     // Set card down using enter
     // TODO this doesn't work
     cy.get('.card--button-setdown').type('{enter}');
-    /* cy.get('.card--button-setdown').trigger('keydown', {
+    cy.get('.card--button-setdown').type('{enter}');
+    cy.get('.card--button-setdown').trigger('keydown', {
       keyCode: '13',
       force: true,
-    }); */
+    });
     //cy.contains('set card down', { matchCase: false }).should('not.exist');
 
     /* // Set card down using escape
