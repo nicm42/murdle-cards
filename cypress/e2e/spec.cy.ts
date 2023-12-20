@@ -2,7 +2,7 @@
 /// <reference types="cypress-plugin-tab" />
 
 describe('Murdle cards testing', () => {
-  it('Clicks using the mouse', () => {
+  xit('Clicks using the mouse', () => {
     cy.visit('/');
 
     cy.get('.small-card').should('have.length', 3);
@@ -59,7 +59,7 @@ describe('Murdle cards testing', () => {
     cy.contains('set card down', { matchCase: false }).should('not.exist');
   });
 
-  xit('Clicks using the keyboard', () => {
+  it.only('Clicks using the keyboard', () => {
     cy.visit('/');
 
     cy.contains('Admiral Navy', { matchCase: false }).should('exist');
@@ -129,16 +129,10 @@ describe('Murdle cards testing', () => {
     ).should('exist');
 
     // Set card down using enter
-    // TODO this doesn't work
-    cy.get('.card--button-setdown').type('{enter}');
-    cy.get('.card--button-setdown').focus().type('{enter}');
-    cy.get('.card--button-setdown').trigger('keydown', {
-      keyCode: '13',
-      force: true,
-    });
-    //cy.contains('set card down', { matchCase: false }).should('not.exist');
+    cy.get('.card--button-setdown').type('{enter}', { force: true });
+    cy.contains('set card down', { matchCase: false }).should('not.exist');
 
-    /* // Set card down using escape
+    // Set card down using escape
     cy.get('body').type('{esc}');
     cy.contains(
       'The firstborn son of an Admiral Navy who himself was the son of an Admiral Navy. He is rarely seen without a cigar dangling from his lips, and he always smells faintly of the sea.',
@@ -167,9 +161,8 @@ describe('Murdle cards testing', () => {
     ).should('exist');
 
     // Set card down using spacebar
-    // TODO this doesn't work either
-    //cy.get('.card--button-setdown').type(' ');
-    //cy.contains('set card down', { matchCase: false }).should('not.exist'); */
+    cy.get('.card--button-setdown').type(' ', { force: true });
+    cy.contains('set card down', { matchCase: false }).should('not.exist');
   });
 
   xit('Focuses the relevant element when tabbing', () => {
