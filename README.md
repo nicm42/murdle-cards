@@ -21,6 +21,8 @@ Annoyances:
 - Unable to go to previous big card
 - Unable to use arrows to go between big cards
 
+Note: this will only display properly on a reasonably sized screen, since all of these annoyances relate to my experience with Murdle on a computer.
+
 ## Screenshots
 
 ![Screenshot](screenshot-small-cards.png)
