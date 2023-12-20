@@ -10,12 +10,16 @@ describe('Murdle cards testing', () => {
     cy.contains('Babyface Blue', { matchCase: false }).should('exist');
     cy.contains('Baron Maroon', { matchCase: false }).should('exist');
 
-    // TODO this doesn't work
-    /* cy.get('.small-card-back').first().should('be.visible');
-    cy.get('.small-card-front').first().should('not.be.visible'); */
+    // Check back is visible and front isn't
+    cy.get('.small-card-back').first().should('be.visible');
+    cy.get('.small-card-front').first().should('not.be.visible');
 
     // Turn the cards over
     cy.get('.small-card').first().click();
+
+    // Check front is visible and back isn't
+    cy.get('.small-card-back').first().should('not.be.visible');
+    cy.get('.small-card-front').first().should('be.visible');
 
     // Open a big card
     cy.get('.small-card').first().click();

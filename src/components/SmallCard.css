@@ -13,12 +13,12 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: rotate 500ms linear;
+  transition: transform 500ms linear;
   width: 100%;
 }
 
 .small-card.show-front .small-card-inner {
-  rotate: y 180deg;
+  transform: rotateY(180deg);
 }
 
 .small-card-front,
@@ -40,7 +40,7 @@
 
 .small-card-front {
   background-color: #fffdf5;
-  rotate: y 180deg;
+  transform: rotateY(180deg);
 }
 
 .card-back--emoji {
