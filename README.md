@@ -16,6 +16,7 @@ I love Murdle, but the cards have some annoyances. Here I am recreating them and
 
 Annoyances:
 
+- When there are five cards, only having two per row
 - Big cards not all being the same height
 - Unable to use escape key to close big cards
 - Unable to go to previous big card
